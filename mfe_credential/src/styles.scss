@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Import Google Font: Poppins (weights 300,400,500,600,700) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: 'Poppins', Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Optional: utility classes for common font-weights */
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
