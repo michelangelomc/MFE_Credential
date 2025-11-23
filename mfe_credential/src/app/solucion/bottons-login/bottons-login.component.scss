@@ -1,0 +1,113 @@
+// Elegant BEM styles for login buttons
+$primary: #1565c0; // deep blue
+$primary-2: #1e88e5; // lighter blue
+$accent: #00695c; // teal-ish for accent
+$card-bg: #ffffff;
+$muted: #6b7280;
+
+.login-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.25rem;
+
+	&__inner {
+		width: 100%;
+		max-width: 480px;
+		border-radius: 14px;
+		padding: 1rem 1.1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__group {
+		display: flex;
+		gap: 0.75rem;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__button {
+        width: 35%;
+		min-width: 0;
+		padding: 0.65rem 1rem;
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 0.4px;
+		border-radius: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 150ms cubic-bezier(.2,.9,.3,1), box-shadow 150ms ease, opacity 120ms ease;
+		cursor: pointer;
+		user-select: none;
+
+		min-height: 44px;
+
+		//Focus state for keyboard users
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 4px rgba($primary-2, 0.12);            
+			transform: translateY(-1px);
+		}
+
+		// Hover / active
+		&:hover {
+			transform: translateY(-3px);
+            background-color: #57c7e96e;
+		}
+
+		&:active {
+			transform: translateY(0);
+			transition-duration: 80ms;
+		}
+	}
+
+	// Primary modifier: bold gradient and subtle elevation
+	&__button--primary {
+		color: white !important;
+		background-image: linear-gradient(180deg, $primary-2, $primary);
+		box-shadow: 0 8px 22px rgba(21, 101, 192, 0.18);
+		border: none;
+	}
+
+	// Secondary modifier: stroked / transparent with accent color
+	&__button--secondary {
+		background: transparent;
+		color: $primary !important;
+		border: 1px solid rgba(21, 101, 192, 0.14);
+		box-shadow: none;
+	}
+
+	// Disabled look helper
+	&__button[disabled],
+	&__button[aria-disabled='true'] {
+		opacity: 0.6;
+		transform: none;
+		box-shadow: none;
+		cursor: not-allowed;
+	}
+
+	// Responsive: stack buttons vertically on narrow screens
+	@media (max-width: 520px) {
+		&__group {
+			flex-direction: column;
+			gap: 0.5rem;
+			align-items: stretch;
+		}
+
+		&__button {
+			width: 100%;
+		}
+	}
+}
+
+// Small accessibility tweak: if button includes an icon, space it
+.login-buttons__button ::ng-deep .mat-button-wrapper {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+

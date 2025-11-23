@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DirectiveModule } from '../../wrapper/directivas/directive.molule';
 
 @Component({
   selector: 'app-bottons-login',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './bottons-login.component.scss'
 })
 export class BottonsLoginComponent {
-
+  textBtnLogin: string = 'Login';
+  textBtnNew: string = 'Novo';
 }

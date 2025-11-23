@@ -1,0 +1,43 @@
+.login-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem;
+
+	&__inner {
+		width: 100%;
+		max-width: 520px;
+		background: #ffffff;
+		border-radius: 12px;
+		padding: 1.25rem 1.25rem 0.75rem;
+		box-shadow: 0 10px 24px rgba(16, 24, 40, 0.06);
+	}
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+	padding-bottom: 1rem;
+
+	&__field {
+		width: 100%;
+		.mat-form-field-wrapper {
+			width: 100%;
+		}
+	}
+
+	input[matInput] {
+		height: 2.4rem;
+		line-height: 2.4rem;
+	}
+}
+
+@media (max-width: 420px) {
+	.login-container__inner {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
